@@ -1,0 +1,10 @@
+# IDE - vscode
+.idea/
+.vscode/
+
+# Dependency directories
+node_modules/
+
+build/
+tmp/
+temp/
