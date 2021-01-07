@@ -1,5 +1,6 @@
 import {Entity, Column, CreateDateColumn, PrimaryGeneratedColumn} from "typeorm";
 
+// Subject --> Disciplina (Materia)
 @Entity()
 export class Subject {
   @PrimaryGeneratedColumn('increment')
