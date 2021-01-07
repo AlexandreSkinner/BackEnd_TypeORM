@@ -1,5 +1,6 @@
-import { Entity, Column, CreateDateColumn,   UpdateDateColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryGeneratedColumn } from "typeorm";
 
+// Lesson --> Aula
 @Entity()
 export class Lesson {
   @PrimaryGeneratedColumn('increment')

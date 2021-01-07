@@ -1,5 +1,6 @@
 import { Entity, Column, CreateDateColumn, PrimaryGeneratedColumn } from "typeorm";
 
+// Student --> Estudante
 @Entity('student')
 export class Student {
   @PrimaryGeneratedColumn('increment')

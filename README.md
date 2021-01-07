@@ -10,6 +10,7 @@ $ npm install -g typescript
 $ npm install -g typeorm
 
 ### Habilita o CLI - para excutar comando na linha de comando
+### Permite que código typescript seja executado no node
 $ npm install -g ts-node
 
 
@@ -95,7 +96,7 @@ $ typeorm migration:create -n createClass
 ### Esta estratégia cria a migração a partir da definição das entitys existentes
 ### no Models, por esse método as migration são códigos SQL. Veja exemplo abaixo:
 ### await queryRunner.query( "CREATE TABLE `content` (`id` int NOT NULL AUTO_INCREMENT,
-###                          `descript` varchar##(255) NOT NULL, `linkContent` varchar(255) NOT NULL, 
+###                          `descript` varchar(255) NOT NULL, `linkContent` varchar(255) NOT NULL, 
 ###                          PRIMARY KEY (`id`)) ENGINE=InnoDB");
 ### Comando para essa estratégia de geração para a migration
 $ npm run typeorm migration:generate -- -n CriarTabelas
@@ -132,3 +133,43 @@ $ npm run dev
 1. Descrição das flag do script dev:
   A flag --transpile-only indica que só transpila o código e não verifica se ele está certo ou errado. Nós não precisamos dessa verificação em tempo de desenvolvimento porque o VsCode já realiza esta verificação
   A flag --respawn serve para que o ts-node-dev fique observando alterações do código, para transpilar e fazer auto reload da aplicação
+
+
+
+[
+  {
+    "id": 1,
+    "name": "Typescript",
+    "duration": 45,
+    "createAt": "2021-01-02T00:08:56.955Z",
+    "updateAt": "2021-01-02T00:08:56.955Z"
+  },
+  {
+    "id": 2,
+    "name": "Estrutura de Dados",
+    "duration": 40,
+    "createAt": "2021-01-02T00:09:45.743Z",
+    "updateAt": "2021-01-02T00:09:45.743Z"
+  },
+  {
+    "id": 3,
+    "name": "Sistemas Operacionais III",
+    "duration": 30,
+    "createAt": "2021-01-02T00:10:15.140Z",
+    "updateAt": "2021-01-02T00:10:15.140Z"
+  },
+  {
+    "id": 4,
+    "name": "Analise Orientada a Objeto",
+    "duration": 60,
+    "createAt": "2021-01-02T00:10:34.166Z",
+    "updateAt": "2021-01-02T00:10:34.166Z"
+  },
+  {
+    "id": 5,
+    "name": "Engenharia de software III",
+    "duration": 60,
+    "createAt": "2021-01-02T00:10:55.216Z",
+    "updateAt": "2021-01-02T00:10:55.216Z"
+  }
+]
