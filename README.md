@@ -69,7 +69,7 @@ MyProject
     "username": "root",
     "password": "arariboia",
     "database": "dbtpyorm",
-    "synchronize": false,
+    "synchronize": false,             // true - para estratégia (1)     
     "logging": false,
     "entities": [
        "src/models/**/*.ts"
@@ -89,11 +89,11 @@ MyProject
 4. CONTROLE DE MIGRATION
 -------------------------
 
-### Esta estratégia cria um esboço de migration que precisa ser complementado 
+### Estratégia 1 - Cria um esboço de migration que precisa ser complementado 
 ### manualmente no exemplo aqui foi criado quando só existia a entity Class.
 $ typeorm migration:create -n createClass
 
-### Esta estratégia cria a migração a partir da definição das entitys existentes
+### Estratégia 2 - Cria a migração a partir da definição das entitys existentes
 ### no Models, por esse método as migration são códigos SQL. Veja exemplo abaixo:
 ### await queryRunner.query( "CREATE TABLE `content` (`id` int NOT NULL AUTO_INCREMENT,
 ###                          `descript` varchar(255) NOT NULL, `linkContent` varchar(255) NOT NULL, 
