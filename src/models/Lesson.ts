@@ -1,5 +1,6 @@
-import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryGeneratedColumn, OneToOne } from "typeorm";
+import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryGeneratedColumn, OneToOne, ManyToOne } from "typeorm";
 import { Content } from "./Content";
+import { Subject } from "./Subject";
 
 // Lesson --> Aula
 @Entity()
@@ -10,9 +11,13 @@ export class Lesson {
   @Column()
   description: string;
 
-  // Uma Lesson (aula) possui um Content (conteúdo)
-  @OneToOne( type => Content, lesson => lesson )
+  // Uma Aula (Lesson) possui um Conteúdo (Content)
+  @OneToOne(type => Content, lesson => lesson)
   content: Content;
+
+  // Muitas Aulas (Lesson) estão relacionadas a uma Disciplina (Subject)
+  @ManyToOne(type => Subject, lessons => Lesson )
+  subject: Subject;
 
   @CreateDateColumn({ name: 'created_At' })
   createdAt: Date;
