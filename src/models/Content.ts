@@ -13,8 +13,8 @@ export class Content {
   @Column()
   linkContent: string;
 
-  // Um Content possui uma Lesson
-  // @JoinColumn() => Informa que Content possuirá a foreing key lesson_id
+  // Um Conteúdo (Content) possui uma Aula (Lesson)
+  // @JoinColumn() => Informa que Content possuirá a foreing key lessonId
   @OneToOne(type => Lesson, content => Content)
   @JoinColumn()               
   lesson: Lesson;
