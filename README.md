@@ -27,7 +27,7 @@ $ npm install @types/express -D   ou   npm install @types/express --save-dev
 $ npm install @types/node -D   ou   npm install @types/node --save-dev
 
 ### Instalando Ferramentas para automatizar fluxo de dev: re-start server, transpilaçao do  
-### código TS para JS e execução do código Javascript. Substitu - ts + nodemon + node
+### código TS para JS e execução do código Javascript. Substitui ==> ts + nodemon + node
 $ npm install ts-node-dev -D   // Adicionando uma dependencia de desenvolvimento (-D)
 
 ### Instalar drive do banco de dados MySQL para o Typeorm
@@ -39,7 +39,7 @@ $ npm install reflect-metadata --save-dev ou  npm install reflect-metadata -D
 3. INICIALIZAÇÕES:
 ------------------
 
-### Inicializando um projeto - Isso cria o arquivo package.json
+### Inicializando um projeto Node - Isso cria o arquivo package.json
 $ npm init -y
 
 ### Inicializando projeto Typescript (cria arquivo tsconfig.json)
@@ -69,7 +69,7 @@ MyProject
     "username": "root",
     "password": "arariboia",
     "database": "dbtpyorm",
-    "synchronize": false,             // true - para estratégia (1)     
+    "synchronize": false,             // true - para estratégia (1)  de migrations    
     "logging": false,
     "entities": [
        "src/models/**/*.ts"
@@ -89,11 +89,11 @@ MyProject
 4. CONTROLE DE MIGRATION
 -------------------------
 
-### Estratégia 1 - Cria um esboço de migration que precisa ser complementado 
-### manualmente no exemplo aqui foi criado quando só existia a entity Class.
+### Estratégia (1) - Cria um esboço de migration que precisa ser complementado 
+### manualmente, no exemplo aqui foi criado quando só existia a entity Class.
 $ typeorm migration:create -n createClass
 
-### Estratégia 2 - Cria a migração a partir da definição das entitys existentes
+### Estratégia (2) - Cria a migração a partir da definição das entitys existentes
 ### no Models, por esse método as migration são códigos SQL. Veja exemplo abaixo:
 ### await queryRunner.query( "CREATE TABLE `content` (`id` int NOT NULL AUTO_INCREMENT,
 ###                          `descript` varchar(255) NOT NULL, `linkContent` varchar(255) NOT NULL, 
@@ -131,11 +131,15 @@ $ npm run dev
   }
 
 1. Descrição das flag do script dev:
-  A flag --transpile-only indica que só transpila o código e não verifica se ele está certo ou errado. Nós não precisamos dessa verificação em tempo de desenvolvimento porque o VsCode já realiza esta verificação
-  A flag --respawn serve para que o ts-node-dev fique observando alterações do código, para transpilar e fazer auto reload da aplicação
+  ts-node-dev - É uma ferramenta que compila o projeto typescript e reinicia a aplicação quando o arquivo é alterado.
+  
+  A flag --transpile-only indica que só transpila o código e não verifica se ele está certo ou errado. Nós não precisamos dessa verificação em tempo de desenvolvimento porque o VsCode com o Typescript já realiza esta verificação em tempo de desing;
 
+  A flag --respawn serve para que o ts-node-dev fique observando alterações do código, para transpilar e fazer auto reload da aplicação;
+  
+  A flag --ignore-watch node_modules faz o compilador ignorar todo o conteúdo da pasta node_modules
 
-
+### Exemplo de Subject (Disciplinas)
 [
   {
     "id": 1,
